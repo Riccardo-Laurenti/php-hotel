@@ -105,7 +105,20 @@
         <table class="table">
             <thead>
                 <tr>
-
+                    <?php
+                    foreach ($hotel as $key => $value) {
+                    ?>
+                        <th scope="col">
+                            <?php
+                            if ($key === "distance_to_center") {
+                                $key = str_replace("_", " ", $key);
+                            }
+                            echo ucwords($key);
+                            ?>
+                        </th>
+                    <?php
+                    }
+                    ?>
                 </tr>
             </thead>
             <tbody>
