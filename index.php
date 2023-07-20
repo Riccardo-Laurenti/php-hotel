@@ -122,7 +122,30 @@
                 </tr>
             </thead>
             <tbody>
-
+                <?php
+                foreach ($hotels as $hotel) {
+                ?>
+                    <tr>
+                        <?php
+                        foreach ($hotel as $key => $value) {
+                        ?>
+                            <td>
+                                <?php
+                                if ($value === true) {
+                                    $value = "true";
+                                } elseif ($value === false) {
+                                    $value = "false";
+                                }
+                                echo $value
+                                ?>
+                            </td>
+                        <?php
+                        }
+                        ?>
+                    </tr>
+                <?php
+                }
+                ?>
             </tbody>
         </table>
     </div>
